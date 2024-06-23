@@ -1,8 +1,11 @@
 import './SignIn.css'
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+    const navegar = useNavigate()
+
     return (
         <div className="sign-in">
             <div className='si-left'>
@@ -17,7 +20,7 @@ const SignIn = () => {
                     <InputText id='email' placeholder='Email' />
                     <label htmlFor="password">Contraseña</label>
                     <InputText id='password' placeholder='Password' />
-                    <Button label='Iniciar sesión' />
+                    <Button label='Iniciar sesión' onClick={() => navegar('/home')}/>
 
                     <p>¿No tienes una cuenta? <a href='/sign-up'>Registrate</a></p>
                 </div>

@@ -4,13 +4,18 @@ import { useState,useEffect } from 'react';
 import NavBarComponent from '../../component/navBarComponent/NavBarComponent'
 import APIGatewayService from '../../shared/services/api-gateway-service';
 import { Card } from 'primereact/card';
+import { useNavigate } from 'react-router-dom';
 
 const Recomendaciones = () => {
     const location = useLocation();
     const diagnosisId = location.state?.diagnosisId;
     const assessmentId = location.state?.assessmentId;
+    const type = location.state?.type;
+    const user = JSON.parse(localStorage.getItem('user'));
+    const userId = user?.id;
     const [recomendaciones, setRecomendaciones] = useState([]);
     const [diagnostico, setDiagnostico] = useState('Cargando...');
+    const navigate = useNavigate();
 
     const fetchRecomendacionesByDiagnosisId = async (diagnosisId) => {
         try {
@@ -23,14 +28,31 @@ const Recomendaciones = () => {
     }
 
     const createAssessmentRecommendation = async (assessmentId, recommendationId) => {
+        let tipoTest = ''
+
+        if (type === 1) {
+            tipoTest = 'depresión'
+        } else {
+            tipoTest = 'ansiedad'
+        }
+        
         const data = {
             "assessment_Id": assessmentId,
             "recommendation_Id": recommendationId
         };
+        const dataNotification = {
+            "text": `Se eligió un nuevo tratamiento para un diagnóstico de ${tipoTest}`,
+            "category": `${tipoTest.toUpperCase()}`,
+            "user_id": userId
+        };
+
         try {
             console.log("Data: ", data);
             const response = await APIGatewayService.createAssesssmentRecommendation(data);
             console.log('Assessment Recommendation created successfully', response);
+            const responseNotification = await APIGatewayService.createNotification(dataNotification);
+            console.log('Notification created successfully', responseNotification);
+            navigate('/notifications');
         } catch (error) {
             console.error('Error creating assessment recommendation:', error);
         }

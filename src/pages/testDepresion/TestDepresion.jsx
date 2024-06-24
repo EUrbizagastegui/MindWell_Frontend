@@ -12,6 +12,7 @@ const TestDepresion = () => {
     const [answers, setAnswers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [assessmentId, setAssessmentId] = useState(null);
+    const [type, setType] = useState(1);
     const navigate = useNavigate();
 
     const fetchQuestions = async () => {
@@ -67,7 +68,7 @@ const TestDepresion = () => {
             const response = await APIGatewayService.calculatedepression(dataDepression);
             // Enviar el diagnosis_Id al componente de recomendaciones
             const diagnosisId = response.data.diagnosis_Id;
-            navigate('/recomendaciones', { state: { diagnosisId, assessmentId } });
+            navigate('/recomendaciones', { state: { diagnosisId, assessmentId, type } });
         } catch (error) {
             console.error('Error calculating results:', error);
         }

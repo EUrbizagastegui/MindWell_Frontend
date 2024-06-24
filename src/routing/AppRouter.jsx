@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import SignIn from '../pages/signIn/SignIn';
 import SignUp from '../pages/signup/SignUp';
 import Home from '../pages/home/Home';
+import Personallog from '../pages/personallog/Personallog';
 
 const AppRouter = () => {
     return (
@@ -10,6 +11,7 @@ const AppRouter = () => {
                 <Route path='/sign-in' element={<SignIn />} />
                 <Route path='/sign-up' element={<SignUp />} />
                 <Route path='/home' element={<Home />} />
+                <Route path='/personallog' element={<Personallog />} />
                 <Route path='/' element={<Navigate to='/sign-in' />} />
                 <Route path="*" element={<Navigate to="/sign-in" />} />
             </Routes>

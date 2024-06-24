@@ -19,7 +19,7 @@ const NavBarComponent = () => {
         {
             label: 'Bitacora',
             icon: 'pi pi-fw pi-pencil',
-            command: () => navegar('/home')
+            command: () => navegar('/personallog')
         },
         {
             label: 'Recursos',

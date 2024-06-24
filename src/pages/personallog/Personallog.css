@@ -1,0 +1,152 @@
+.personal-logs-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: flex-start;
+    min-height: 100dvh;
+}
+
+.bitacora-nav{
+    width: 100%;
+}
+
+.personal-logs-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+}
+
+.new-log-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.new-log-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+.new-log-form button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.new-log-form button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #f44336;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.personal-logs-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.log-item {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.log-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.log-details p {
+    margin: 0;
+}
+
+.log-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.log-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-button {
+    background-color: #ff9800;
+    color: white;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-log-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-log-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 16px;
+}
+
+.edit-log-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-log-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-log-buttons .update-button {
+    background-color: #ff9800;
+    color: white;
+}
+
+.edit-log-buttons .cancel-edit-button {
+    background-color: #ccc;
+    color: black;
+}
+
+.no-logs-message {
+    font-style: italic;
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+}

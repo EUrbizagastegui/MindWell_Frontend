@@ -3,6 +3,8 @@ import SignIn from '../pages/signIn/SignIn';
 import SignUp from '../pages/signup/SignUp';
 import Resources from '../pages/resources/Resources';
 import Home from '../pages/home/Home';
+import Personallog from '../pages/personallog/Personallog';
+import Notifications from '../pages/notifications/Notifications';
 
 const AppRouter = () => {
     return (
@@ -12,6 +14,8 @@ const AppRouter = () => {
                 <Route path='/resources' element={<Resources/>}/>
                 <Route path='/sign-in' element={<SignIn />} />
                 <Route path='/sign-up' element={<SignUp />} />
+                <Route path='/personallog' element={<Personallog />} />
+                <Route path='/notifications' element={<Notifications />} />
                 <Route path='/' element={<Navigate to='/sign-in' />} />
                 <Route path="*" element={<Navigate to="/sign-in" />} />
             </Routes>

@@ -24,7 +24,7 @@ const NavBarComponent = () => {
         {
             label: 'Recursos',
             icon: 'pi pi-fw pi-file',
-            command: () => navegar('/home')
+            command: () => navegar('/resources')
         },
         {
             label: 'Notificaciones',

@@ -148,8 +148,8 @@ class APIGatewayService {
     getFetchHistory() {
         return httpCommon.get("/apigateway/fetchhistories")
     }
-    updateFetchHistory(id, data) {
-        return httpCommon.put(`/apigateway/fetchhistories/${id}`, data)
+    updateFetchHistory(data) {
+        return httpCommon.put(`/apigateway/fetchhistories`, data)
     }
     getAllResources() {
         return httpCommon.get("/apigateway/resources")
@@ -158,10 +158,13 @@ class APIGatewayService {
         return httpCommon.get(`/apigateway/resources/${id}`)
     }
     getResourcesByCategory(category) {
-        return httpCommon.post("/apigateway/resources/category", category)
+        return httpCommon.post("/apigateway/resources/category", {category: category});
     }
     fetchResources() {
         return httpCommon.post("/apigateway/resources/fetch-resources", {})
+    }
+    postUserResources(data){
+        return httpCommon.post("apigateway/usersresources", data);
     }
     getAllUserResources() {
         return httpCommon.get("/apigateway/usersresources")

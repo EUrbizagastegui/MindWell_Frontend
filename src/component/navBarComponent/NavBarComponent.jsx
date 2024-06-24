@@ -29,7 +29,7 @@ const NavBarComponent = () => {
         {
             label: 'Notificaciones',
             icon: 'pi pi-fw pi-bell',
-            command: () => navegar('/home')
+            command: () => navegar('/notifications')
         }
     ]
 

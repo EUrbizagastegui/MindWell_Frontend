@@ -1,0 +1,27 @@
+.recomendaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    min-height: 100dvh;
+    background-color: #0dc7e8
+}
+.home-nav {
+    width: 100%;
+    margin-bottom: auto;
+}
+.re-body {
+    margin-top: 2em;
+    margin-bottom: auto;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+.re-card:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out
+}

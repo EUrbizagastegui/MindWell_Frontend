@@ -14,7 +14,7 @@ const NavBarComponent = () => {
         {
             label: 'Evaluaciones',
             icon: 'pi pi-fw pi-file',
-            command: () => navegar('/home')
+            command: () => navegar('/evaluaciones')
         },
         {
             label: 'Bitacora',
@@ -30,6 +30,11 @@ const NavBarComponent = () => {
             label: 'Notificaciones',
             icon: 'pi pi-fw pi-bell',
             command: () => navegar('/home')
+        },
+        {
+            label: 'Tratamientos',
+            icon: 'pi pi-fw pi-file',
+            command: () => navegar('/tratamientos')
         }
     ]
 

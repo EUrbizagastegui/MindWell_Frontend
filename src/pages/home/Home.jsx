@@ -1,9 +1,10 @@
 import NavBarComponent from '../../component/navBarComponent/NavBarComponent'
 import { Button } from 'primereact/button';
+import { useNavigate } from 'react-router-dom';
 import './Home.css'
 
 const Home = () => {
-    
+    const navigate = useNavigate();
 
     return (
         <div className="home">
@@ -18,7 +19,10 @@ const Home = () => {
                     <p>Proporcionar herramientas, recursos y apoyo accesibles y efectivos para ayudarte a enfrentar los desafíos de la vida y alcanzar un estado de equilibrio y felicidad.</p>
                     <h3>Tú importas</h3>
                     <p>Recuerda que cuidar de tu salud mental es un acto de amor propio. Aquí en MindWell, te proporcionamos un espacio seguro y acogedor donde puedes explorar, aprender y crecer.</p>
-                    <Button label='Comenzar evaluación' severity="secondary"/>
+                    <Button
+                    label='Comenzar evaluación'
+                    severity="secondary"
+                    onClick={() => navigate('/evaluaciones')}/>
                 </div>
             </div>
         </div>
